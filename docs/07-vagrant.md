@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
   end
   # define a VM machine configuration
   config.vm.define "raddit-app" do |app|
-    app.vm.box = "ubuntu/xenial64"
+    app.vm.box = "ubuntu/jammy64"
     app.vm.hostname = "raddit-app"
   end
 end
@@ -78,14 +78,14 @@ We also specify characteristics of a VM we want to launch: what machine image (`
 ```ruby
 # define a VM machine configuration
 config.vm.define "raddit-app" do |app|
-  app.vm.box = "ubuntu/xenial64"
+  app.vm.box = "ubuntu/jammy64"
   app.vm.hostname = "raddit-app"
 end
 ```
 
 ## Start a Local VM
 
-With the Vagrantfile created, you can start a VM on your local machine using Ubuntu 16.04 image from Vagrant Cloud.
+With the Vagrantfile created, you can start a VM on your local machine using Ubuntu 22.04 image from Vagrant Cloud.
 
 Run the following command inside the folder with your Vagrantfile:
 
@@ -127,7 +127,7 @@ Vagrant.configure("2") do |config|
   end
   # define a VM configuration
   config.vm.define "raddit-app" do |app|
-    app.vm.box = "ubuntu/xenial64"
+    app.vm.box = "ubuntu/jammy64"
     app.vm.hostname = "raddit-app"
     # sync a local folder with application code to the VM folder
     app.vm.synced_folder "raddit-app/", "/srv/raddit-app"

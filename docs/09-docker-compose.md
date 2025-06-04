@@ -18,7 +18,7 @@ To make the management of our local container infrastructure easier and more rel
 
 Follow the official documentation on [how to install Docker Compose](https://docs.docker.com/compose/install/) on your system.
 
-Verify that installed version of Docker Compose is => 1.18.0:
+Verify that installed version of Docker Compose is => 2.20.0:
 
 ```bash
 $ docker-compose -v
