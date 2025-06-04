@@ -16,11 +16,11 @@ You've signed up for a free tier of [Google Cloud Platform](https://cloud.google
 
 First thing we will do is to provision a virtual machine (VM) inside GCP for running the application.
 
-Use the following gcloud command in your terminal to launch a VM with Ubuntu 16.04 distro:
+Use the following gcloud command in your terminal to launch a VM with Ubuntu 22.04 LTS:
 
 ```bash
 $ gcloud compute instances create raddit-instance-2 \
-    --image-family ubuntu-1604-lts \
+    --image-family ubuntu-2204-lts \
     --image-project ubuntu-os-cloud \
     --boot-disk-size 10GB \
     --machine-type n1-standard-1
@@ -89,7 +89,7 @@ Clone the [application repo](https://github.com/Artemmkin/raddit), but first mak
 $ git version
 ```
 
-At the time of writing the latest image of Ubuntu 16.04 which GCP provides has `git` preinstalled, so we can skip this step.
+At the time of writing the latest image of Ubuntu 22.04 provided by GCP already has `git` preinstalled, so we can skip this step.
 
 Clone the application repo into the home directory of `raddit-user` user:
 
@@ -109,8 +109,8 @@ $ sudo bundle install
 Install MongoDB which your application uses:
 
 ```bash
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-$ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+$ wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+$ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 $ sudo apt-get update
 $ sudo apt-get install -y mongodb-org
 ```

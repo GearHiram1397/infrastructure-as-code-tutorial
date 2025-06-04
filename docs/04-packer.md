@@ -44,10 +44,10 @@ Create a `raddit-base-image.json` file inside the `packer` directory with the fo
       "project_id": "infrastructure-as-code",
       "zone": "europe-west1-b",
       "machine_type": "g1-small",
-      "source_image_family": "ubuntu-1604-lts",
+      "source_image_family": "ubuntu-2204-lts",
       "image_name": "raddit-base-{{isotime `20060102-150405`}}",
       "image_family": "raddit-base",
-      "image_description": "Ubuntu 16.04 with Ruby, Bundler and MongoDB preinstalled",
+      "image_description": "Ubuntu 22.04 with Ruby, Bundler and MongoDB preinstalled",
       "ssh_username": "raddit-user"
     }
   ]
@@ -78,10 +78,10 @@ Your template should look similar to this one:
       "project_id": "infrastructure-as-code",
       "zone": "europe-west1-b",
       "machine_type": "g1-small",
-      "source_image_family": "ubuntu-1604-lts",
+      "source_image_family": "ubuntu-2204-lts",
       "image_name": "raddit-base-{{isotime `20060102-150405`}}",
       "image_family": "raddit-base",
-      "image_description": "Ubuntu 16.04 with Ruby, Bundler and MongoDB preinstalled",
+      "image_description": "Ubuntu 22.04 with Ruby, Bundler and MongoDB preinstalled",
       "ssh_username": "raddit-user"
     }
   ],

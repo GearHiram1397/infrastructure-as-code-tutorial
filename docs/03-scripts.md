@@ -18,7 +18,7 @@ Start a new VM for this lab. The command should look familiar:
 
 ```bash
 $ gcloud compute instances create raddit-instance-3 \
-    --image-family ubuntu-1604-lts \
+    --image-family ubuntu-2204-lts \
     --image-project ubuntu-os-cloud \
     --boot-disk-size 10GB \
     --machine-type n1-standard-1
@@ -66,8 +66,8 @@ apt-get install -y ruby-full build-essential
 gem install --no-rdoc --no-ri bundler
 
 echo "  ----- install mongodb -----  "
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" > /etc/apt/sources.list.d/mongodb-org-6.0.list
 apt-get update
 apt-get install -y mongodb-org
 

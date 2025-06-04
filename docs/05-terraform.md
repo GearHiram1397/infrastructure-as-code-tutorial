@@ -40,7 +40,7 @@ The second problem is dealt by source control tools like `git`, while the first 
 
 [Download](https://www.terraform.io/downloads.html) and install Terraform on your system.
 
-Make sure Terraform version is  => 0.11.0:
+Make sure Terraform version is  => 1.5.0:
 
 ```bash
 $ terraform -v
@@ -95,7 +95,7 @@ Create another file inside `terraform` folder and call it `providers.tf`. Put pr
 
 ```
 provider "google" {
-  version = "~> 1.4.0"
+  version = "~> 5.0"
   project = "infrastructure-as-code"
   region  = "europe-west1"
 }
